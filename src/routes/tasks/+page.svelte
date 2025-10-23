@@ -1,0 +1,22 @@
+<script lang="ts">
+	import type { TabItem } from '../../interface/TabItems';
+	import Tabs from '$lib/Tabs.svelte';
+	import Message from '$lib/Message.svelte';
+
+	const tabItems: TabItem[] = [
+		{
+			title: 'Tab1',
+			value: 1,
+			content: Message
+		},
+		{
+			title: 'TabCont',
+			value: 2,
+			content: Message
+		}
+	];
+</script>
+
+<div>
+	<Tabs {tabItems} />
+</div>
