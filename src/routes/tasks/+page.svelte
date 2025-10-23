@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TabItem } from '../../interface/TabItems';
+	import type { TabItem } from '../../interface/TabItems.svelte';
 	import Tabs from '$lib/Tabs.svelte';
 	import Message from '$lib/Message.svelte';
 
