@@ -6,14 +6,24 @@
 
 	const tabItems: TabItem[] = [
 		{
-			title: 'Tab1',
+			title: 'Backlog',
 			value: 1,
 			content: Message
 		},
 		{
-			title: 'TabCont',
+			title: 'Table',
 			value: 2,
 			content: Table
+		},
+		{
+			title: 'Kanban Board',
+			value: 3,
+			content: Message
+		},
+		{
+			title: 'List',
+			value: 4,
+			content: Message
 		}
 	];
 </script>
