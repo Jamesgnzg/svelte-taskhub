@@ -3,6 +3,8 @@
 	import type { Component } from 'svelte';
 
 	const { tabItems }: { tabItems: TabItem[] } = $props();
+	const activeTabStyle = 'border-b-2 border-orange-500 text-orange-500';
+	const inactiveTabStyle = 'text-gray-500 hover:border-b-2 hover:border-gray-400 hover:bg-gray-100';
 	let activeTab: Number = $state(1);
 	let ActiveContent: Component = $state(tabItems[0].content);
 
@@ -17,23 +19,19 @@
 </script>
 
 <div class="p-5">
-	<ul class="flex list-none flex-wrap rounded-md border-b border-[#dee2e6] pl-0">
+	<ul class="flex list-none flex-wrap gap-2 border-b-2 border-[#dee2e6]">
 		{#each tabItems as items}
 			<li
-				class={activeTab === items.value
-					? `-mb-px rounded-md border border-[#dee2e6] border-b-white bg-white text-[#495057]`
-					: ''}
+				class={`-mb-px rounded-t-md text-sm ${activeTab === items.value ? activeTabStyle : inactiveTabStyle}`}
 			>
-				<!-- svelte-ignore a11y_click_events_have_key_events -->
-				<span
-					class={`block cursor-pointer rounded-md border border-transparent p-4 ${activeTab == items.value && `hover:border-[#dee2e6] hover:border-b-white`}`}
+				<button
+					class="block cursor-pointer p-3"
 					onclick={setActiveTab(items.value)}
-					role="button"
 					tabindex={items.value}
 					aria-label={items.title}
 				>
 					{items.title}
-				</span>
+				</button>
 			</li>
 		{/each}
 	</ul>
