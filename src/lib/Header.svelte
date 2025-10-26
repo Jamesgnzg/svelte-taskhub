@@ -8,10 +8,41 @@
 	import SearchIcon from '../lib/assets/search.png';
 	import HelpIcon from '../lib/assets/question.png';
 	import MenuIcon from '../lib/assets/menu.png';
-
+	import { Portal, Tooltip } from '@skeletonlabs/skeleton-svelte';
+	// Temporary avatars
 	import FavIcon from '../lib/assets/favicon.svg';
-
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+
+	const headerMenus: { icon: string; text: string }[] = [
+		{
+			icon: NotificationsIcon,
+			text: 'Notifications'
+		},
+		{
+			icon: InboxIcon,
+			text: 'Inbox'
+		},
+		{
+			icon: InviteIcon,
+			text: 'Invite'
+		},
+		{
+			icon: MarketPlaceIcon,
+			text: 'Market Place'
+		},
+		{
+			icon: AutoPilotHubIcon,
+			text: 'Auto Pilot'
+		},
+		{
+			icon: SearchIcon,
+			text: 'Search'
+		},
+		{
+			icon: HelpIcon,
+			text: 'Help'
+		}
+	];
 </script>
 
 {#snippet navBarButton(icon: string, altText: string)}
@@ -27,13 +58,9 @@
 			<span class="self-center font-semibold whitespace-nowrap">TaskHub</span>
 		</div>
 		<div class="flex items-center gap-2 p-3">
-			{@render navBarButton(NotificationsIcon, 'Notifications')}
-			{@render navBarButton(InboxIcon, 'Inbox')}
-			{@render navBarButton(InviteIcon, 'Invite')}
-			{@render navBarButton(MarketPlaceIcon, 'Market Place')}
-			{@render navBarButton(AutoPilotHubIcon, 'Auto Pilot')}
-			{@render navBarButton(SearchIcon, 'Search')}
-			{@render navBarButton(HelpIcon, 'Help')}
+			{#each headerMenus as menu}
+				{@render navBarButton(menu.icon, menu.text)}
+			{/each}
 			<hr class="h-6 border-r border-gray-300" />
 			{@render navBarButton(MenuIcon, 'Menu')}
 			<div
