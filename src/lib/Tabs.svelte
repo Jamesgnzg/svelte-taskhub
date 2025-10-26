@@ -18,7 +18,7 @@
 	};
 </script>
 
-<div class="p-5">
+<div class="p-1">
 	<ul class="flex list-none flex-wrap gap-2 border-b-2 border-[#dee2e6]">
 		{#each tabItems as items}
 			<li
