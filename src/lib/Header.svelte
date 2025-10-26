@@ -8,7 +8,6 @@
 	import SearchIcon from '../lib/assets/search.png';
 	import HelpIcon from '../lib/assets/question.png';
 	import MenuIcon from '../lib/assets/menu.png';
-	import { Portal, Tooltip } from '@skeletonlabs/skeleton-svelte';
 	// Temporary avatars
 	import FavIcon from '../lib/assets/favicon.svg';
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
