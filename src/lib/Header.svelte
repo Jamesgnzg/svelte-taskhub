@@ -26,7 +26,7 @@
 			<img class="me-1 -mt-px h-6" src={HubIcon} alt="Hub Icon" />
 			<span class="self-center font-semibold whitespace-nowrap">TaskHub</span>
 		</div>
-		<div class="mr-2 flex items-center gap-2 p-3">
+		<div class="flex items-center gap-2 p-3">
 			{@render navBarButton(NotificationsIcon, 'Notifications')}
 			{@render navBarButton(InboxIcon, 'Inbox')}
 			{@render navBarButton(InviteIcon, 'Invite')}
@@ -36,9 +36,11 @@
 			{@render navBarButton(HelpIcon, 'Help')}
 			<hr class="h-6 border-r border-gray-300" />
 			{@render navBarButton(MenuIcon, 'Menu')}
-			<div class="flex cursor-pointer items-center gap-0.5 rounded pl-0.5 hover:bg-gray-300">
+			<div
+				class="flex cursor-pointer items-center gap-0.5 rounded rounded-r-xl pl-0.5 hover:bg-gray-300"
+			>
 				<img class="me-1 h-6" src={FavIcon} alt="FavIcon" />
-				<Avatar class="-mr-1.5 h-6.5 w-6.5 bg-amber-500 font-bold text-gray-100">
+				<Avatar class="h-6.5 w-6.5 bg-amber-500 font-bold text-gray-100">
 					<Avatar.Fallback>JG</Avatar.Fallback>
 				</Avatar>
 			</div>
