@@ -11,7 +11,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="grid h-screen grid-rows-[auto_1fr_auto] bg-green-50">
+<div class="grid h-screen grid-rows-[auto_1fr_auto] bg-emerald-50">
 	<Header />
 	<div class="grid w-full grid-cols-2 pl-3 md:grid-cols-[auto_1fr]">
 		<Sidebar />
