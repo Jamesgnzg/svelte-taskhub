@@ -11,6 +11,7 @@
 	// Temporary avatars
 	import FavIcon from '../lib/assets/favicon.svg';
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+	import { BOARDS } from '../routes/paths';
 
 	const headerMenus: { icon: string; text: string }[] = [
 		{
@@ -52,10 +53,12 @@
 
 <div class="w-full">
 	<div class="flex flex-row items-center justify-between">
-		<div class="flex p-3 font-bold">
-			<img class="me-1 -mt-px h-6" src={HubIcon} alt="Hub Icon" />
-			<span class="self-center font-semibold whitespace-nowrap">TaskHub</span>
-		</div>
+		<a href={BOARDS} title="Boards">
+			<div class="flex p-3 font-bold">
+				<img class="me-1 -mt-px h-6" src={HubIcon} alt="Hub Icon" />
+				<span class="self-center font-semibold whitespace-nowrap">TaskHub</span>
+			</div>
+		</a>
 		<div class="flex items-center gap-2 p-3">
 			{#each headerMenus as menu}
 				{@render navBarButton(menu.icon, menu.text)}
