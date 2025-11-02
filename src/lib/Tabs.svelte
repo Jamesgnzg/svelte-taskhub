@@ -4,7 +4,7 @@
 
 	const { tabItems }: { tabItems: TabItem[] } = $props();
 	const activeTabStyle = 'border-b-2 border-orange-500 text-orange-500';
-	const inactiveTabStyle = 'text-gray-500 hover:border-b-2 hover:border-gray-400 hover:bg-gray-100';
+	const inactiveTabStyle = 'text-gray-500 hover:border-b-2 hover:border-gray-400 hover:bg-gray-200';
 	let activeTab: Number = $state(1);
 	let ActiveContent: Component = $state(tabItems[0].content);
 

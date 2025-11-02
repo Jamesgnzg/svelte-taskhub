@@ -7,7 +7,7 @@
 </script>
 
 <div class="hover:cursor-pointer">
-	<button class="w-full cursor-pointer rounded-md p-2 hover:bg-emerald-100" on:click={handleClick}>
+	<button class="w-full cursor-pointer rounded-md p-2 hover:bg-gray-200" on:click={handleClick}>
 		<div class="flex w-full">
 			<div class="mr-1">
 				<slot name="name">

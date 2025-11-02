@@ -53,7 +53,7 @@
 
 <div class="w-full">
 	<div class="flex flex-row items-center justify-between">
-		<a href={BOARDS} title="Boards">
+		<a href={BOARDS} title="Boards" class="ml-2 rounded-md hover:bg-gray-200">
 			<div class="flex p-3 font-bold">
 				<img class="me-1 -mt-px h-6" src={HubIcon} alt="Hub Icon" />
 				<span class="self-center font-semibold whitespace-nowrap">TaskHub</span>

@@ -13,7 +13,7 @@
 
 <div class="grid h-screen grid-rows-[auto_1fr_auto] bg-emerald-50">
 	<Header />
-	<div class="grid w-full grid-cols-2 pl-3 md:grid-cols-[auto_1fr]">
+	<div class="mt-1 grid w-full grid-cols-2 pl-3 md:grid-cols-[auto_1fr]">
 		<Sidebar />
 		<main class="-ml-1 space-y-4 rounded-lg bg-white shadow-2xl">
 			{@render children?.()}
