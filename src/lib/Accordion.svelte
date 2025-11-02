@@ -7,20 +7,20 @@
 </script>
 
 <div class="hover:cursor-pointer">
-	<div class="flex w-full rounded-md p-2 hover:bg-green-100">
-		<div class="mr-1">
-			<slot name="name">
-				<p>Name</p>
-			</slot>
-		</div>
-		<button class="cursor-pointer" on:click={handleClick}>
+	<button class="w-full cursor-pointer rounded-md p-2 hover:bg-green-100" on:click={handleClick}>
+		<div class="flex w-full">
+			<div class="mr-1">
+				<slot name="name">
+					<p>Name</p>
+				</slot>
+			</div>
 			{#if open}
 				<ChevronUp />
 			{:else}
 				<ChevronDown />
 			{/if}
-		</button>
-	</div>
+		</div>
+	</button>
 	{#if open}
 		<div class="mt-3 p-2" transition:slide>
 			<slot name="sublinks">
