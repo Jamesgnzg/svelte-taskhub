@@ -13,9 +13,11 @@
 
 <div class="grid h-screen grid-rows-[auto_1fr_auto] bg-emerald-50">
 	<Header />
-	<div class="mt-1 grid w-full grid-cols-2 pl-3 md:grid-cols-[auto_1fr]">
+	<div
+		class="mt-1 ml-3 grid w-full grid-cols-2 gap-0.5 rounded-lg bg-white md:grid-cols-[auto_1fr]"
+	>
 		<Sidebar />
-		<main class="-ml-1 space-y-4 rounded-lg bg-white shadow-2xl">
+		<main class="space-y-4 rounded-lg bg-white shadow-[-5px_-5px_20px_0px_rgba(226,240,231,1)]">
 			{@render children?.()}
 		</main>
 	</div>

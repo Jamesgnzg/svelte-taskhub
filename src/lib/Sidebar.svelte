@@ -8,9 +8,9 @@
 	const toggleDisplay: 'hidden' | 'block' = $derived(sideBarShown ? 'hidden' : 'block');
 </script>
 
-<aside class="group relative rounded-l-md bg-gray-100 p-3 opacity-75">
+<aside class="group relative p-3">
 	<button
-		class="absolute right-0 z-10 -mr-2 rounded-full bg-gray-300 p-1 group-hover:block {toggleDisplay}"
+		class="absolute right-0 -mr-2 rounded-full bg-gray-300 p-1 group-hover:block hover:bg-gray-200 {toggleDisplay}"
 		onclick={() => (sideBarShown = !sideBarShown)}
 	>
 		{#if sideBarShown}
@@ -22,11 +22,11 @@
 	<div class="max-w-3xs">
 		{#if sideBarShown}
 			<div
-				class={`h-screen min-w-3xs rounded-l-md  bg-gray-100 p-3 opacity-75`}
+				class="h-screen min-w-3xs rounded-l-md p-3 opacity-75"
 				transition:slide={{ axis: 'x', duration: 500 }}
 			>
 				<Accordion>
-					<p class="text-sm font-bold" slot="name">Favorites</p>
+					<p class="text-sm font-bold text-black" slot="name">Favorites</p>
 				</Accordion>
 			</div>
 		{/if}
