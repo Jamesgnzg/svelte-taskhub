@@ -6,8 +6,11 @@
 	const handleClick = () => (open = !open);
 </script>
 
-<div class="hover:cursor-pointer">
-	<button class="w-full cursor-pointer rounded-md p-2 hover:bg-gray-200" on:click={handleClick}>
+<div class="p-1">
+	<button
+		class="w-full rounded-md p-2 hover:cursor-pointer hover:bg-gray-200"
+		on:click={handleClick}
+	>
 		<div class="flex w-full">
 			<div class="mr-1">
 				<slot name="name">
