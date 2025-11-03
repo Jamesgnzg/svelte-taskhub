@@ -1,34 +1,31 @@
-<script>
-	export let open = false;
-	import { ChevronUp, ChevronDown } from '@lucide/svelte';
+<script lang="ts">
+	import type { SvelteComponent } from 'svelte';
 	import { slide } from 'svelte/transition';
 
-	const handleClick = () => (open = !open);
+	const {
+		header,
+		children,
+		title
+	}: {
+		header: Function;
+		children: Function;
+		title: string;
+	} = $props();
+	let open = $state(false);
+
+	const handleToggle = () => (open = !open);
 </script>
 
 <div class="p-1">
 	<button
 		class="w-full rounded-md p-2 hover:cursor-pointer hover:bg-gray-200"
-		on:click={handleClick}
+		onclick={handleToggle}
 	>
-		<div class="flex w-full">
-			<div class="mr-1">
-				<slot name="name">
-					<p>Name</p>
-				</slot>
-			</div>
-			{#if open}
-				<ChevronUp />
-			{:else}
-				<ChevronDown />
-			{/if}
-		</div>
+		{@render header(title, open)}
 	</button>
 	{#if open}
 		<div class="mt-3 p-2" transition:slide>
-			<slot name="sublinks">
-				<p>No available sublinks</p>
-			</slot>
+			{@render children()}
 		</div>
 	{/if}
 </div>
