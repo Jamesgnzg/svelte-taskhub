@@ -1,9 +1,9 @@
 <script lang="ts">
 	import {
-		ChevronUp,
-		ChevronDown,
 		ChevronRight,
 		ChevronLeft,
+		ChevronUp,
+		ChevronDown,
 		CircleArrowUp,
 		CircleArrowDown
 	} from '@lucide/svelte';
@@ -15,27 +15,6 @@
 	const toggleDisplay: 'hidden' | 'block' = $derived(sideBarShown ? 'hidden' : 'block');
 </script>
 
-{#snippet favoritesHeader(title: string, open: boolean)}
-	<div class="flex w-full gap-3" transition:fade={{ duration: 100 }}>
-		<p class="text-sm font-bold text-black">{title}</p>
-		{#if open}
-			<ChevronUp />
-		{:else}
-			<ChevronDown />
-		{/if}
-	</div>
-{/snippet}
-
-{#snippet teamsHeader(team: string, open: boolean)}
-	<div class="flex w-full gap-3" transition:fade={{ duration: 100 }}>
-		{#if open}
-			<CircleArrowUp />
-		{:else}
-			<CircleArrowDown />
-		{/if}
-		<p class="text-sm font-bold text-black">{team}</p>
-	</div>
-{/snippet}
 <aside class="group relative p-2">
 	<button
 		class="absolute right-0 -mr-2 rounded-full bg-gray-300 p-1 group-hover:block hover:bg-gray-200 {toggleDisplay}"
@@ -53,10 +32,30 @@
 				class="h-screen min-w-3xs rounded-l-md p-3 opacity-75"
 				transition:slide={{ axis: 'x', duration: 500 }}
 			>
-				<Accordion header={favoritesHeader} title="Favorites">
+				<Accordion title="Favorites">
+					{#snippet header(title: string, open: boolean)}
+						<div class="flex w-full gap-3" transition:fade={{ duration: 100 }}>
+							<p class="text-sm font-bold text-black">{title}</p>
+							{#if open}
+								<ChevronUp class="mt-1" size={iconSize} />
+							{:else}
+								<ChevronDown class="mt-1" size={iconSize} />
+							{/if}
+						</div>
+					{/snippet}
 					<div>Test</div>
 				</Accordion>
-				<Accordion header={teamsHeader} title="Scout's Team">
+				<Accordion title="Scout's Team">
+					{#snippet header(team: string, open: boolean)}
+						<div class="flex w-full gap-3" transition:fade={{ duration: 100 }}>
+							{#if open}
+								<CircleArrowUp class="mt-1" size={iconSize} />
+							{:else}
+								<CircleArrowDown class="mt-1" size={iconSize} />
+							{/if}
+							<p class="text-sm font-bold text-black">{team}</p>
+						</div>
+					{/snippet}
 					<div>Test</div>
 				</Accordion>
 			</div>

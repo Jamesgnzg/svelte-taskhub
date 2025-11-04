@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { Snippet } from 'svelte';
 	import { slide } from 'svelte/transition';
 
 	const {
@@ -7,7 +7,7 @@
 		children,
 		title
 	}: {
-		header: Function;
+		header: Snippet<[string, boolean]>;
 		children: Function;
 		title: string;
 	} = $props();
