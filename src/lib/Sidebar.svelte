@@ -68,7 +68,7 @@
 			>
 				{#each sideBarNavigation as nav}
 					<Accordion header={nav.listDesign} title={nav.title}>
-						<div class="flex flex-col">
+						<div class="ml-5 flex flex-col">
 							{#each nav.navigations as navigation}
 								<div class="flex gap-1">
 									<navigation.icon class="mt-1.5" size={iconSize} />

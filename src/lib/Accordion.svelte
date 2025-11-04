@@ -24,7 +24,7 @@
 		{@render header(title, open)}
 	</button>
 	{#if open}
-		<div class="mt-3 p-2" transition:slide>
+		<div class="p-2" transition:slide>
 			{@render children()}
 		</div>
 	{/if}
