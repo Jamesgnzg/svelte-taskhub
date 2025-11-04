@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TabItem } from '../interface/TabItems.svelte';
+	import type { TabItem } from '../interface/TabItems';
 	import type { Component } from 'svelte';
 
 	const { tabItems }: { tabItems: TabItem[] } = $props();
