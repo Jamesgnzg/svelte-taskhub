@@ -7,7 +7,7 @@
 		children,
 		title
 	}: {
-		header: Snippet<[string, boolean]>;
+		header: Snippet<[title: string, open: boolean]>;
 		children: Function;
 		title: string;
 	} = $props();
